@@ -1,9 +1,8 @@
-
-import TTTGame from './components/TTTGame';
+import StartGame from "./components/StartGame";
 
 function App() {
   return (
-   <h1><TTTGame/></h1>
+   <h1><StartGame/></h1>
   );
 }
 
