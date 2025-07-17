@@ -1,0 +1,31 @@
+.board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    padding: 0px;
+    background-color: beige;
+   }
+  .board-row{
+    display: flex;
+  }
+  .board-btn{
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+    font-size: 20px;
+    word-wrap: break-word;
+    color: rgb(91, 53, 3);
+    background-color:burlywood;
+  }
+  .reserBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    border: 5px solid rgb(70, 65, 3) ;
+    font-size: 24px;
+     background-color:burlywood;
+  }
