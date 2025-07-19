@@ -2,24 +2,23 @@ import { HelpPageVisibility } from "../store/Context";
 import HomePage from "./HomePage";
 import { useContext } from "react";
 
-export default function HelpPage(){
+export default function HelpPage() {
+    const { isHelpPage, setIsHelpPage } = useContext(HelpPageVisibility);
 
-    const {isHelpPage,setIsHelpPage} = useContext(HelpPageVisibility);
-
-    const handleBackBtn=()=> {
+    const handleBackBtn = () => {
         setIsHelpPage(false);
     }
 
     return (
         <>
-        {(isHelpPage)?
-        <div>
-        <p>Lorem ipsum dga exercitationem amet! Nihil, ipsam!</p>
-        <button onClick={handleBackBtn}> back </button>
-        </div>
-        :
-        <HomePage/>
-        }
+            {(isHelpPage) ?
+                <div>
+                    <p>Lorem ipsum dga exercitationem amet! Nihil, ipsam!</p>
+                    <button id="button" onClick={handleBackBtn}> back </button>
+                </div>
+                :
+                <HomePage />
+            }
         </>
     )
 }

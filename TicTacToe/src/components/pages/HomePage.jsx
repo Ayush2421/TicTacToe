@@ -32,36 +32,43 @@ export default function HomePage() {
     }
     return (
         <>
-        <GameWinner.Provider value={{setWinner} }>
-        <UserInformation.Provider value={{userData, setUserData}}>
-            <FormPageVisbility.Provider value={{ isFormPage, setIsFormPage }}>
-                <HelpPageVisibility.Provider value={{ isHelpPage, setIsHelpPage }}>
-                    {(isFormPage) ? <UserInfoPage /> : (isHelpPage) ? <HelpPage /> :
-                        <div>
-                            <div>
-                                <h6>Logo</h6>
-                            </div>
-                            <div>
-                                <GamePart board={board} setBoard={setBoard} 
-                                checkBtnState={checkBtnState} setCheckBtnState={setCheckBtnState}
-                                />
-                                {
-                                 winner && <h6>Winner is: 
-                                {winner=== "X"? userData.player1:userData.player2 }</h6>
-                                }
-                                <button onClick={handleResetBtn}>Reset </button>
-                                <button onClick={handleHelpPageBtn}>HelpPage</button>
-                            </div>
-                            <div>
-                                <PlayersUI winner={winner}/>
-                                <button onClick={handleFormBtn}> UserInfoPage </button>
-                            </div>
-                        </div>
-                    }
-                </HelpPageVisibility.Provider>
-            </FormPageVisbility.Provider>
-        </UserInformation.Provider>
-        </GameWinner.Provider>
+            <GameWinner.Provider value={{ setWinner }}>
+                <UserInformation.Provider value={{ userData, setUserData }}>
+                    <FormPageVisbility.Provider value={{ isFormPage, setIsFormPage }}>
+                        <HelpPageVisibility.Provider value={{ isHelpPage, setIsHelpPage }}>
+                            {(isFormPage) ? <UserInfoPage /> : (isHelpPage) ? <HelpPage /> :
+                                <div className="homePageContainer">
+                                    <div className="homePageHeading">
+                                        <h1>Tic-Tac-Toe</h1>
+                                    </div>
+                                    <div className="homePageContent">
+                                        <div className="boardAndBtns">
+                                            <GamePart board={board} setBoard={setBoard}
+                                                checkBtnState={checkBtnState} setCheckBtnState={setCheckBtnState}
+                                            />
+                                            <div className="gamePartBtn">
+                                                <button id="button" onClick={handleResetBtn}>Reset </button>
+                                                <button id="button" onClick={handleHelpPageBtn}>HelpPage</button>
+                                            </div>
+                                        </div>
+                                        <div className="WinningMsg">
+                                            {winner && <h6>Winner is:
+                                                {winner === "X" ? userData.player1 : userData.player2}</h6>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className="homePageFotter">
+                                        <div className="playerInfoFotter">
+                                            <PlayersUI winner={winner} />
+                                        </div>
+                                        <button id="button" onClick={handleFormBtn}>Change Name</button>
+                                    </div>
+                                </div>
+                            }
+                        </HelpPageVisibility.Provider>
+                    </FormPageVisbility.Provider>
+                </UserInformation.Provider>
+            </GameWinner.Provider>
         </>
     )
 }

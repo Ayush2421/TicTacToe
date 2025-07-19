@@ -3,11 +3,10 @@ import { useContext } from "react";
 import { FormPageVisbility, Player1WinCounter, Player2WinCounter, UserInformation } from "../store/Context";
 
 export default function UserInfoPage() {
-    const {isFormPage, setIsFormPage} = useContext(FormPageVisbility);
-    const {userData, setUserData}= useContext(UserInformation);
-
-    const {setPlayer1WinCount}= useContext(Player1WinCounter);
-    const {setPlayer2WinCount}= useContext(Player2WinCounter);
+    const { isFormPage, setIsFormPage } = useContext(FormPageVisbility);
+    const { userData, setUserData } = useContext(UserInformation);
+    const { setPlayer1WinCount } = useContext(Player1WinCounter);
+    const { setPlayer2WinCount } = useContext(Player2WinCounter);
 
     const handleSubmitForm = (evt) => {
         evt.preventDefault();
@@ -15,27 +14,26 @@ export default function UserInfoPage() {
         setPlayer1WinCount(0)
         setPlayer2WinCount(0)
     }
-    const handleBackClick = ()=>{
+    const handleBackClick = () => {
         setIsFormPage(!isFormPage);
     }
     const handleInputs = (evt) => {
-        setUserData({...userData, [evt.target.name]: evt.target.value});
+        setUserData({ ...userData, [evt.target.name]: evt.target.value });
     }
-
     return (
         <>
             {
-                 (isFormPage) ?
+                (isFormPage) ?
                     <form onSubmit={handleSubmitForm}>
                         <input name="player1" placeholder="Enter First Player Name"
                             value={userData.player1} onChange={handleInputs} />
                         <input name="player2" placeholder="Enter Second Player Name"
                             value={userData.player2} onChange={handleInputs} />
-                        <button onClick={handleBackClick}> back </button>
-                        <button> Sumit </button>
+                        <button id="button" onClick={handleBackClick}> back </button>
+                        <button id="button"> Sumit </button>
                     </form>
                     :
-                    <HomePage/>
+                    <HomePage />
             }
         </>
     )

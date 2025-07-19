@@ -1,0 +1,202 @@
+:root {
+    --shadowColor: rgb(0, 0, 0);
+    --errorMsgColor: red;
+    --blueColor: blue;
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSection>img {
+    width: 60%;
+    height: 60%;
+    filter: drop-shadow(1px 1px 3px var(--blueColor));
+}
+
+.loadingContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.loadingContent>h1 {
+    padding-bottom: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px var(--shadowColor);
+    text-align: center;
+}
+
+.homePageContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.homePageHeading {
+    position: absolute;
+    width: 100vw;
+    height: 120px;
+    top: 0;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePageContent {
+    width: 700px;
+}
+
+.boardAndBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamePartBtn {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.WinningMsg {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 100px;
+}
+
+.homePageFotter {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    bottom: 0;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePageFotter>.playerInfoFotter {
+    font-size: 20px;
+}
+
+.homePageFotter>Button {
+    margin-left: 100px;
+}
+
+/* @media (height < 800px ){
+    .homePageFotter{
+        height:100px
+    }
+    .homePageContent{
+        margin-bottom: 10px;
+    }
+    .WinningMsg{
+        bottom:100px
+    }
+    .homePageFotter >.playerInfoFotter{
+        font-size:20px;
+    }
+}
+@media (height < 680px){
+    .homePageHeading{
+        height: 80px;
+    }
+    .homePageFotter{
+        height:70px
+    }
+    .homePageContent{
+        margin-bottom: 30px;
+    }
+    .WinningMsg{
+        bottom:70px
+    }
+    .homePageFotter >.playerInfoFotter{
+        font-size:16px;
+    }
+   
+}
+@media (height < 600px){
+    .homePageContent{
+        margin-bottom: 0px;
+    }
+    .WinningMsg{
+        bottom:70px
+    }
+    .WinningMsg > h4{
+       font-size:24px;
+    }
+    .homePageFotter >.playerInfoFotter{
+        font-size:16px;
+    }
+   
+}
+@media (height < 450px){
+    .homePageHeading{
+        height: 50px;
+    }
+    .homePageHeading> h1{
+        font-size:40px
+    }
+    .WinningMsg{
+        bottom:68px
+    }
+    .homePageContent{
+        margin-bottom: 50px;
+    }
+    .imgSection > img{
+        width: 45%;
+        height:45%;
+    }
+} */
+@media (width < 700px) {
+    .boardAndBtns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .palyerUIContainer {
+        font-size: 16px
+    }
+}
+
+@media (width < 530px) {
+    .imgSection>img {
+        width: 60%;
+        height: 60%;
+    }
+
+    .loadingContent {
+        display: flex;
+        flex-direction: column;
+    }
+}
