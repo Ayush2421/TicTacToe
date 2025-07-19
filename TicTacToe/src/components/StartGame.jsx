@@ -2,7 +2,7 @@ import LoadingPage from "./pages/LoadingPage";
 import { useState } from "react";
 import { Player1WinCounter, Player2WinCounter } from "./store/Context";
 import "./pages/CSS/pages.css"
-import "./otherComponents/CSS/mainGameComponents.css"
+import "./mainGameComponents/CSS/mainGameComponents.css"
 
 export default function StartGame() {
     const [player1WinCount, setPlayer1WinCount] = useState(0);

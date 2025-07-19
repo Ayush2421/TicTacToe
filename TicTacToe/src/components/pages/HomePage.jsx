@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GamePart from "../otherComponents/GamePart";
-import PlayersUI from "../otherComponents/PlayersUI";
+import GamePart from "../mainGameComponents/GamePart";
+import PlayersUI from "../mainGameComponents/PlayersUI";
 import { FormPageVisbility, GameWinner, HelpPageVisibility, UserInformation } from "../store/Context";
 import HelpPage from "./HelpPage";
 import UserInfoPage from "./UserInfoPage";
