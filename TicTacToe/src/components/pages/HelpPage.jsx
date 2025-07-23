@@ -12,7 +12,7 @@ export default function HelpPage() {
     return (
         <>
             {(isHelpPage) ?
-                <div>
+                <div className="HelpPageContainer">
                     <p>Lorem ipsum dga exercitationem amet! Nihil, ipsam!</p>
                     <button id="button" onClick={handleBackBtn}> back </button>
                 </div>

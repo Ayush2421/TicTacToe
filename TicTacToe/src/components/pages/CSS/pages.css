@@ -1,202 +1,168 @@
-:root {
-    --shadowColor: rgb(0, 0, 0);
-    --errorMsgColor: red;
-    --blueColor: blue;
-}
 
-.loadingContainer {
+.loadingContainer{ 
+    width: 100vw;
+    height:100vh;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.imgSection {
+.imgSection{
+    max-width: 350px;
+    max-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.imgSection>img {
-    width: 60%;
-    height: 60%;
-    filter: drop-shadow(1px 1px 3px var(--blueColor));
+.imgSection img{
+    width: 100%;
+    max-height: 100%;
+    padding: 10px,10px
 }
-
-.loadingContent {
+.loadingContent{
+    padding: 0px 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
 }
-
-.loadingContent>h1 {
-    padding-bottom: 10px;
-    font-size: 28px;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px var(--shadowColor);
+.loadingContent > h1{
+    font-size:8vh;
     text-align: center;
+    color: black;
+}
+/* homePageContainer */
+
+ .homePageContainer{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.homePageHeading{
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgb(4, 4, 4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homePageHeading >h1{
+    font-size: 8vh;
+}
+.homePageContent{
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boardAndBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+.WinningMsg{
+    position:fixed;
+    bottom: 21vh;
+}
+.WinningMsg >h6{
+    font-size: 6vh;
+    padding:10px;
+    color:black
 }
 
-.homePageContainer {
+.gamePartBtn > button{
+    margin:10px;
+}
+.gamePartContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.gamePartContainer > button {
+    width: 10vw;
+    height: 12vh;
+    background-color: var(--btnToggleBgColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gamePartBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* HelpPageContainer */
+.HelpPageContainer{
+    width:100vw;
     height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.homePageHeading {
-    position: absolute;
-    width: 100vw;
-    height: 120px;
-    top: 0;
-    background-color: black;
-    color: aliceblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.homePageContent {
-    width: 700px;
+.HelpPageContainer >p{
+    padding: 50px;
+    font-size: 8vh;
 }
 
-.boardAndBtns {
+
+
+
+
+.homePageFotter{
+    width:100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+    background-color: rgb(4, 4, 4);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.gamePartBtn {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.palyerUIContainer >h3{
+    font-size: 6vh;
+    padding:10px;
 }
 
-.WinningMsg {
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 100px;
-}
-
-.homePageFotter {
-    position: absolute;
-    width: 100vw;
-    height: 100px;
-    bottom: 0;
-    background-color: black;
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.homePageFotter>.playerInfoFotter {
-    font-size: 20px;
-}
-
-.homePageFotter>Button {
-    margin-left: 100px;
-}
-
-/* @media (height < 800px ){
-    .homePageFotter{
-        height:100px
+@media (width < 600px){
+    .homePageHeading >h1{
+        font-size: 8vw;
     }
-    .homePageContent{
-        margin-bottom: 10px;
+    .palyerUIContainer >h3{
+        font-size: 4vw;
+        padding:10px;
     }
-    .WinningMsg{
-        bottom:100px
+    .gamePartBtn{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
-    .homePageFotter >.playerInfoFotter{
-        font-size:20px;
-    }
-}
-@media (height < 680px){
-    .homePageHeading{
-        height: 80px;
-    }
-    .homePageFotter{
-        height:70px
-    }
-    .homePageContent{
-        margin-bottom: 30px;
-    }
-    .WinningMsg{
-        bottom:70px
-    }
-    .homePageFotter >.playerInfoFotter{
-        font-size:16px;
-    }
-   
-}
-@media (height < 600px){
-    .homePageContent{
-        margin-bottom: 0px;
-    }
-    .WinningMsg{
-        bottom:70px
-    }
-    .WinningMsg > h4{
-       font-size:24px;
-    }
-    .homePageFotter >.playerInfoFotter{
-        font-size:16px;
-    }
-   
-}
-@media (height < 450px){
-    .homePageHeading{
-        height: 50px;
-    }
-    .homePageHeading> h1{
-        font-size:40px
-    }
-    .WinningMsg{
-        bottom:68px
-    }
-    .homePageContent{
-        margin-bottom: 50px;
-    }
-    .imgSection > img{
-        width: 45%;
-        height:45%;
-    }
-} */
-@media (width < 700px) {
-    .boardAndBtns {
+    .boardAndBtns{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding:10px;
     }
+    .gamePartContainer > button {
+        width: 12vw;
+        height: 8vh;
+    }
+    .WinningMsg >h6{
+        font-size: 6vw;
+    }
+} 
 
-    .palyerUIContainer {
-        font-size: 16px
-    }
-}
-
-@media (width < 530px) {
-    .imgSection>img {
-        width: 60%;
-        height: 60%;
-    }
-
-    .loadingContent {
-        display: flex;
-        flex-direction: column;
-    }
-}

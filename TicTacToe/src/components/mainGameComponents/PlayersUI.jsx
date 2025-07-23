@@ -20,8 +20,8 @@ export default function PlayersUI({ winner }) {
 
     return (
         <div className="palyerUIContainer">
-            <h1>{userData.player1}- {player1WinCount} </h1>
-            <h1>{userData.player2}- {player2WinCount}</h1>
+            <h3>{userData.player1}- {player1WinCount} </h3>
+            <h3>{userData.player2}- {player2WinCount}</h3>
         </div>
     )
 }
