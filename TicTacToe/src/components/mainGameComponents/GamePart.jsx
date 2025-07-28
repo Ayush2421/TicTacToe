@@ -4,7 +4,7 @@ import { GameWinner } from "../store/Context";
 export default function GamePart({ board, setBoard, checkBtnState, setCheckBtnState }) {
 
     const [visibleX, setVisiblX] = useState(true);
-    const { setWinner } = useContext(GameWinner)
+    const { setWinner, setPlayerMsg } = useContext(GameWinner)
 
     const handleSmallBoxes = (index) => {
         if (board[index] === null) {
@@ -14,8 +14,14 @@ export default function GamePart({ board, setBoard, checkBtnState, setCheckBtnSt
             setVisiblX(!visibleX);
             const win = checkWinner(newBoard)
             if (win) {
+                setPlayerMsg(null)
                 setWinner(win);
                 setCheckBtnState(true);
+            }
+            else if (!newBoard.includes(null)) {
+                setPlayerMsg("Tie");
+            } else {
+                setPlayerMsg(newBoard[index])
             }
         }
     }

@@ -14,6 +14,7 @@ export default function HomePage() {
     const [isFormPage, setIsFormPage] = useState(false);
     const [userData, setUserData] = useState(userInfo);
     const [winner, setWinner] = useState(null);
+    const [playerMsg, setPlayerMsg] = useState(null);
     const [board, setBoard] = useState(new Array(9).fill(null));
     const [checkBtnState, setCheckBtnState] = useState(false);
 
@@ -21,6 +22,7 @@ export default function HomePage() {
         setBoard(Array(9).fill(null));
         setWinner(null);
         setCheckBtnState(false);
+        setPlayerMsg(null);
     }
     const handleHelpPageBtn = () => {
         setIsHelpPage(true);
@@ -32,7 +34,7 @@ export default function HomePage() {
     }
     return (
         <>
-            <GameWinner.Provider value={{ setWinner }}>
+            <GameWinner.Provider value={{ setWinner, setPlayerMsg }}>
                 <UserInformation.Provider value={{ userData, setUserData }}>
                     <FormPageVisbility.Provider value={{ isFormPage, setIsFormPage }}>
                         <HelpPageVisibility.Provider value={{ isHelpPage, setIsHelpPage }}>
@@ -44,20 +46,27 @@ export default function HomePage() {
                                         </div>
                                         <div className="homePageContent">
                                             <div className="boardAndBtns">
-                                            <GamePart board={board} setBoard={setBoard}
-                                                checkBtnState={checkBtnState} setCheckBtnState={setCheckBtnState}
-                                            />
-                                            <div className="gamePartBtn">
-                                                <button id="button" onClick={handleResetBtn}>Reset </button>
-                                                <button id="button" onClick={handleHelpPageBtn}>HelpPage</button>
+                                                <GamePart board={board} setBoard={setBoard}
+                                                    checkBtnState={checkBtnState} setCheckBtnState={setCheckBtnState}
+                                                />
+                                                <div className="gamePartBtn">
+                                                    <button id="button" onClick={handleResetBtn}>Reset </button>
+                                                    <button id="button" onClick={handleHelpPageBtn}>HelpPage</button>
+                                                </div>
                                             </div>
+                                            <div className="WinningMsg">
+                                                {
+                                                    playerMsg ?
+                                                        (playerMsg === "Tie") ?
+                                                            <h6>Match Tie Please Reset</h6>
+                                                            :
+                                                            <h6>Chance Of:-
+                                                                {playerMsg !== "X" ? userData.player1 : userData.player2}</h6>
+
+                                                        : winner && <h6>Winner is:
+                                                            {winner === "X" ? userData.player1 : userData.player2}</h6>
+                                                }
                                             </div>
-                                        <div className="WinningMsg">
-                                            
-                                            {winner && <h6>Winner is:
-                                                {winner === "X" ? userData.player1 : userData.player2}</h6>
-                                            }
-                                        </div>
                                         </div>
                                         <div className="homePageFotter">
                                             <div className="playerInfoFotter">

@@ -39,7 +39,7 @@ export default function UserInfoPage() {
                         </div>
                         <div>
                             <button id="button" onClick={handleBackClick}> Back </button>
-                            <button id="button"> Submit </button>
+                            {/* <button id="button"> Submit </button> */}
                         </div>
                     </form>
                     :
