@@ -24,13 +24,23 @@ export default function UserInfoPage() {
         <>
             {
                 (isFormPage) ?
-                    <form onSubmit={handleSubmitForm}>
-                        <input name="player1" placeholder="Enter First Player Name"
-                            value={userData.player1} onChange={handleInputs} />
-                        <input name="player2" placeholder="Enter Second Player Name"
-                            value={userData.player2} onChange={handleInputs} />
-                        <button id="button" onClick={handleBackClick}> back </button>
-                        <button id="button"> Sumit </button>
+                    <form className="userInfoContainer" onSubmit={handleSubmitForm}>
+                            <h5>Change User Name</h5>
+                        <div className="userInfoInputs">
+                            <div className="player1">
+                                <input name="player1" placeholder="Enter First Player Name"
+                                value={userData.player1} onChange={handleInputs} />
+                            </div>
+                            <div className="player2">
+                                <input name="player2" placeholder="Enter Second Player Name"
+                                value={userData.player2} onChange={handleInputs} />
+
+                            </div>
+                        </div>
+                        <div>
+                            <button id="button" onClick={handleBackClick}> Back </button>
+                            <button id="button"> Submit </button>
+                        </div>
                     </form>
                     :
                     <HomePage />

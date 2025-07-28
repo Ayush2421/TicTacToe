@@ -13,8 +13,10 @@ export default function HelpPage() {
         <>
             {(isHelpPage) ?
                 <div className="HelpPageContainer">
-                    <p>Lorem ipsum dga exercitationem amet! Nihil, ipsam!</p>
-                    <button id="button" onClick={handleBackBtn}> back </button>
+                    <p>Players take turns marking spaces with either "X" or "O".</p>
+                    <p>The first player to get three of their symbols in a row, either horizontally, vertically, or diagonally, wins the game.</p>
+                    <p>If all spaces are filled and no player has three in a row, the game is a draw.</p>
+                    <button id="button" onClick={handleBackBtn}> Back </button>
                 </div>
                 :
                 <HomePage />

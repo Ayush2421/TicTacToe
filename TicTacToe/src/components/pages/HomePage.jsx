@@ -53,6 +53,7 @@ export default function HomePage() {
                                             </div>
                                             </div>
                                         <div className="WinningMsg">
+                                            
                                             {winner && <h6>Winner is:
                                                 {winner === "X" ? userData.player1 : userData.player2}</h6>
                                             }

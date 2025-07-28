@@ -113,13 +113,12 @@
     align-items: center;
 }
 .HelpPageContainer >p{
-    padding: 50px;
-    font-size: 8vh;
+    padding: 10px;
+    font-size: 3vh;
+    text-justify: 2px;
+    color:rgb(5, 27, 124);
+    text-shadow: none;
 }
-
-
-
-
 
 .homePageFotter{
     width:100%;
@@ -134,7 +133,25 @@
 .palyerUIContainer >h3{
     font-size: 6vh;
     padding:10px;
+    text-transform: lowercase;
 }
+.palyerUIContainer >h3::first-letter{
+   text-transform: capitalize;
+}
+
+.userInfoContainer{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userInfoContainer > h5{
+    color:rgb(5, 27, 124);
+    letter-spacing: 1.2px;
+}
+
 
 @media (width < 600px){
     .homePageHeading >h1{
